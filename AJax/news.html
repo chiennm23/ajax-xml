@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.ajax ({
+                type: "GET",
+                url: "news.xml",
+                dataType: "xml",
+                success: function (xml, index) {
+                    $(xml).find('news').each(function () {
+                        let title = $(this).find('title').text();
+                        let link = $(this).find('link').text();
+                        let description = $(this).find('description').text();
+                        $('<tr></tr>').html('<td>' + (index + 1) + '</td>' + '<td>'+ (title) +'</td> <td>' + '<a href="' +link+ '">' +(link)+ '</a>' + '</td><td>' + (description)+ '</td>').appendTo('table');
+                    });
+                },
+                error: function () {
+                    alert('An error occurred while processing XML file.');
+                }
+            });
+        });
+    </script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+    </style>
+</head>
+<body>
+<table border="1">
+</table>
+</body>
+</html>

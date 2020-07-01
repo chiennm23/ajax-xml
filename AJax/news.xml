@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<newslist>
+    <news>
+        <title>24h</title>
+        <link>https://www.24h.com.vn/</link>
+        <description>Báo tin tức bóng đá</description>
+    </news>
+    <news>
+        <title>dan tri</title>
+        <link>https://dantri.com.vn/</link>
+        <description>Báo tin tức dân trí</description>
+    </news>
+    <news>
+        <title>Vn Ex</title>
+        <link>https://vnexpress.net/</link>
+        <description>Báo tin tức Việt Nam express</description>
+    </news>
+</newslist>
